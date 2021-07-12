@@ -1,5 +1,5 @@
 FROM cr-stg-cn-beijing.volces.com/cp-source-image/cp-source-image:nginx
-
+  
 MAINTAINER richard
 
 # 设置环境
@@ -22,8 +22,4 @@ ARG WITH_RTMP=true
 COPY . .
 RUN touch index.html
 RUN echo '<h1>Hello, Docker!</h1>' > index.html
-RUN rm /usr/share/nginx/html/index.html
-RUN mv index.html /usr/share/nginx/html/
-EXPOSE 80/tcp 443/tcp 1935/tcp
-ENTRYPOINT ["/sbin/entrypoint.sh"]
-CMD ["/usr/sbin/nginx"]
+
